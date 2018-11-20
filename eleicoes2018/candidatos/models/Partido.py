@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Partido(models.Model):
-    sigla_partido = models.CharField(max_length=2)
+    sigla_partido = models.CharField(max_length=10)
     nome_partido = models.CharField(max_length=50)
     numero_partido = models.IntegerField()
 
