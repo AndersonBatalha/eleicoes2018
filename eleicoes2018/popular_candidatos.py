@@ -38,12 +38,13 @@ def popular_dados_partidos():
 
 def popular_dados_eleicao():
     for arquivo in arquivos_csv:
+        i = 0
         csv_eleicoes = rows.import_from_csv(arquivo, encoding='latin-1')
 
         print(arquivo)
 
         for linha in csv_eleicoes:
-
+            i+=1
             # eleicao
             descricao_eleicao = linha.ds_eleicao
             ano = linha.ano_eleicao
@@ -103,11 +104,11 @@ def popular_dados_eleicao():
                 int(linha.dt_eleicao[0:2]),
             )
             try:
+                turno = Turno_Eleicao.objects.get(turno=turno_eleicao)
+            except Turno_Eleicao.DoesNotExist:
                 turno = Turno_Eleicao.objects.create(turno = turno_eleicao,
                                                      data_eleicao=data_eleicao)
                 turno.save()
-            except sqlite3.IntegrityError:
-                pass
 
             # partido
             sigla = linha.sg_partido
@@ -192,7 +193,7 @@ def popular_dados_eleicao():
             except sqlite3.IntegrityError:
                 pass
 
-            print('%s' % (nome_urna_candidato))
+            print('%d - %s' % (i, nome_urna_candidato))
 
 
 if __name__ == '__main__':
