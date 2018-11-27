@@ -11,4 +11,4 @@ class Coligacao_Partidos(models.Model):
         verbose_name_plural = "Coligações e Partidos"
 
     def __str__(self):
-        return "%s - %s" %(self.coligacao, str(self.partido))
+        return "%s" %(self.coligacao)

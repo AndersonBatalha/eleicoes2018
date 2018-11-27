@@ -14,7 +14,7 @@ from candidatos.models import Candidato, Candidatura, Cargo, Coligacao, Coligaca
 
 dir = os.path.abspath('.')
 dir_arquivos_csv = os.path.join(dir, 'consulta_cand_2018/')
-arquivos_csv = [ os.path.join(dir_arquivos_csv, arquivo) for arquivo in os.listdir(dir_arquivos_csv) if 'consulta' in arquivo ]
+arquivos_csv = [ os.path.join(dir_arquivos_csv, nome_arquivo) for nome_arquivo in os.listdir(dir_arquivos_csv) if 'candidatos' in nome_arquivo ]
 
 def popular_dados_partidos():
     i = 0
