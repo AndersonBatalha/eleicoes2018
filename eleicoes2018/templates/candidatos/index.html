@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Index</title>
 </head>
 <body>
-$END$
+    <h1>{{ msg }}</h1>
+    <p><a href="{% url 'candidatos_cargo' 'presidente' %}">Presidente</a></p>
+    <p><a href="{% url 'candidatos_cargo' 'governador' %}">Governador</a></p>
+
 </body>
 </html>
