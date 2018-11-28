@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Candidatos</title>
 </head>
 <body>
+    {% if candidatos %}
+        <h2>{{ qtd_resultados }} candidatos encontrados.</h2>
+        <ul>
+            {% for candidato in candidatos %}
+                <li>
+                    <a href="{% url 'detalhes_candidato' candidato.id %}">{{ candidato.nome_urna }}</a>
+                    <br> Partido: {{ candidato.partido }}
+                    <br>Local de nascimento: {{ candidato.municipio }}
+                    <br>Cargo: {{ candidato.cargo }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h3>Nao foi possivel localizar o cargo solicitado.</h3>
+    {% endif %}
 
 </body>
 </html>
