@@ -182,6 +182,7 @@ def popular_dados_eleicao():
                     partido = partido,
                     municipio = municipio,
                     candidatura = candidatura,
+                    local_eleicao = local_eleicao,
                 )
                 candidato.save()
             except sqlite3.IntegrityError:
