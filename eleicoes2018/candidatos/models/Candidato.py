@@ -4,6 +4,7 @@ from .Candidatura import Candidatura
 from .Cargo import Cargo
 from .Partido import Partido
 from .Municipio import Municipio
+from .Local_Eleicao import Local_Eleicao
 
 class Candidato(models.Model):
     nome_completo = models.CharField(max_length=125, help_text="Nome completo")
@@ -23,6 +24,7 @@ class Candidato(models.Model):
     partido = models.ForeignKey(Partido)
     municipio = models.ForeignKey(Municipio)
     candidatura = models.ForeignKey(Candidatura)
+    local_eleicao = models.ForeignKey(Local_Eleicao)
 
     class Meta:
         verbose_name_plural = "Candidatos"

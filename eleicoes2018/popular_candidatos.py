@@ -1,9 +1,3 @@
-# >>> csv_path = os.path.join('test', 'utf-8.csv')
-# >>> with io.open(csv_path, encoding='utf-8', newline='') as csv_file:
-# >>> csv_reader = csv.reader(csv_file, delimiter=',')
-# >>> for row in csv_reader:
-# >>> print('row {0:d}: data={1}'.format(csv_reader.line_num, row))
-
 import rows, os, django, sqlite3
 from datetime import date
 
