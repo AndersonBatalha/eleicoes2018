@@ -2,9 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Candidato: {{ candidato.nome_urna }}</title>
 </head>
 <body>
+    {% if candidato %}
+        <h1>Dados pessoais</h1>
+            <p>
+                Nome completo: {{ candidato.nome_completo }}<br>
+            </p>
+            <p>
+                Nome na urna eletronica: {{ candidato.nome_urna }}<br>
+            </p>
+            <p>
+                Data de nascimento: {{ candidato.data_nasc }}<br>
+            </p>
+            <p>
+                Genero: {{ candidato.genero }}<br>
+            </p>
+            <p>
+                Estado civil: {{ candidato.estado_civil }}<br>
+            </p>
+            <p>
+                Nacionalidade: {{ candidato.nacionalidade }}<br>
+            </p>
+            <p>
+                Escolaridade: {{ candidato.grau_instrucao }}<br>
+            </p>
+            <p>
+                Ocupaçao: {{ candidato.ocupacao }}<br>
+            </p>
+            <p>
+                Idade na data da posse: {{ candidato.idade_data_posse }}<br>
+            </p>
+            <p>
+                Etnia: {{ candidato.raca }}<br>
+            </p>
+            <p>
+                Contato: {{ candidato.email_contato }}<br>
+            </p>
+            <p>
+                Numero do candidato: {{ candidato.numero_candidato }}<br>
+            </p>
+
+            {{ cargo }}<br>
+            {{ partido }}<br>
+            {{ municipio }}<br>
+            {{ candidatura }}<br>
+            {{ local }}<br>
+    {% else %}
+        <h2>Candidato nao foi encontrado!</h2>
+    {% endif %}
 
 </body>
 </html>
