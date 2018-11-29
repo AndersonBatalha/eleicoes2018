@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Candidatos</title>
-</head>
-<body>
+{% extends 'candidatos/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Candidatos por cargo
+{% endblock %}
+
+{% block body_block %}
     {% if candidatos %}
         <h2>{{ qtd_resultados }} candidatos encontrados.</h2>
         <ul>
@@ -20,6 +21,6 @@
     {% else %}
         <h3>Nao foi possivel localizar o cargo solicitado.</h3>
     {% endif %}
+{% endblock %}
 
-</body>
-</html>
+
