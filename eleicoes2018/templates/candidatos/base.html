@@ -1,10 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% load staticfiles %}
 
-</body>
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Eleiçoes
+            {% block title_block %}
+            {% endblock %}
+        </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/semantic.min.css' %} ">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'components/reset.css' %} ">
+        <link rel="stylesheet" type="text/css" href="{% static 'components/site.css' %} ">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'components/container.css' %} ">
+        <link rel="stylesheet" type="text/css" href="{% static 'components/grid.css' %} ">
+        <link rel="stylesheet" type="text/css" href="{% static 'components/header.css' %} ">
+        <link rel="stylesheet" type="text/css" href="{% static 'components/image.css' %} ">
+        <link rel="stylesheet" type="text/css" href="{% static 'components/menu.css' %} ">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'components/divider.css' %} ">
+        <link rel="stylesheet" type="text/css" href="{% static 'components/list.css' %} ">
+        <link rel="stylesheet" type="text/css" href="{% static 'components/segment.css' %} ">
+        <link rel="stylesheet" type="text/css" href="{% static 'components/dropdown.css' %} ">
+        <link rel="stylesheet" type="text/css" href="{% static 'components/icon.css' %} ">
+
+    </head>
+
+    <body>
+        <div class="ui fixed inverted menu">
+            <div class="ui container">
+                <a href="{% url 'index' %}" class="item">Eleiçoes</a>
+                <div class="ui simple dropdown item">
+                    Candidatos <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <div class="item">
+                            Consulta por cargo<i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="{% url 'candidatos_cargo' 'presidente' %}">Presidente</a>
+                                <a class="item" href="{% url 'candidatos_cargo' 'governador' %}">Governador</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            Consulta por estado
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="item" href="{% url 'listar_partidos' %}">Partidos</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="ui ten column stackable grid container">
+            <div class="row">
+                {% block body_block %}
+
+
+                {% endblock %}
+            </div>
+        </div>
+
+        <div class="ui inverted vertical footer segment">
+            <div class="ui center aligned container">
+                <div class="ui stackable inverted divided grid">
+                    <div class="wide column">
+                        <h4 class="ui inverted header">Footer Header</h4>
+                        <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+        <script src="{% static 'js/semantic.min.js' %}"></script>
+
+    </body>
+
 </html>

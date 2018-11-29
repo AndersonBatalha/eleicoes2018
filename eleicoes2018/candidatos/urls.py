@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^candidatos/(?P<cargo>[\w\-]+)/$', CandidatosCargo.as_view(), name='candidatos_cargo'),
     url(r'^candidato/(?P<id>[\w\-]+)/$', DetalhesCandidato.as_view(), name='detalhes_candidato'),
     url(r'^candidatos/estado/(?P<uf>[\w\-]+)/$', CandidatosEstado.as_view(), name='candidatos_estado'),
+    url(r'^partidos/$', ListarPartidos.as_view(), name='listar_partidos'),
 ]
