@@ -8,29 +8,29 @@
 {% block body_block %}
 
     <div class="row">
-        <p><h1>Partidos politicos no Brasil</h1></p>
-        <hr>
+        <p>
+            <h1 class="ui large center aligned header">Partidos políticos</h1>
+        </p>
     </div>
-    <div class="ui eight wide column">
-        <div class="row">
-            <table class="ui celled table">
-                <thead>
+
+    <div class="doubling row">
+        <table class="ui celled table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Sigla</th>
+                    <th>Número</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for partido in partidos %}
                     <tr>
-                        <th>Nome</th>
-                        <th>Sigla</th>
-                        <th>Numero</th>
+                        <td data-label="nome_partido">{{ partido.nome_partido }}</td>
+                        <td data-label="sigla_partido">{{ partido.sigla_partido }}</td>
+                        <td data-label="numero_partido">{{ partido.numero_partido }}</td>
                     </tr>
-                </thead>
-                <tbody>
-                    {% for partido in partidos %}
-                        <tr>
-                            <td data-label="nome_partido">{{ partido.nome_partido }}</td>
-                            <td data-label="sigla_partido">{{ partido.sigla_partido }}</td>
-                            <td data-label="numero_partido">{{ partido.numero_partido }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 {% endblock %}

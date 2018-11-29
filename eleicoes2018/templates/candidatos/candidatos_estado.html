@@ -12,13 +12,13 @@
             {% for candidato in candidatos %}
                 <li>
                     <a href="{% url 'detalhes_candidato' candidato.id %}">{{ candidato.nome_urna }}</a>
-                    <br> Partido: {{ candidato.partido }}
+                    <br>Partido: {{ candidato.partido }}
                     <br>Local de nascimento: {{ candidato.municipio }}
                     <br>Cargo: {{ candidato.cargo }}
                 </li>
             {% endfor %}
         </ul>
     {% else %}
-        <h3>Nao foi possivel localizar o local solicitado.</h3>
+        <h3>Não foi possivel localizar o local solicitado.</h3>
     {% endif %}
 {% endblock %}
