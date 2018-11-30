@@ -54,6 +54,21 @@ def popular_dados_eleicao():
                 )
                 eleicao.save()
 
+            #turno_eleicao
+            turno_eleicao = linha.nr_turno
+            data_eleicao = date(
+                int(linha.dt_eleicao[6:]),
+                int(linha.dt_eleicao[3:5]),
+                int(linha.dt_eleicao[0:2]),
+            )
+            try:
+                turno = Turno_Eleicao.objects.get(turno=turno_eleicao)
+            except Turno_Eleicao.DoesNotExist:
+                turno = Turno_Eleicao.objects.create(turno = turno_eleicao,
+                                                     data_eleicao=data_eleicao,
+                                                     eleicao = eleicao)
+                turno.save()
+
             # local_eleicao
             uf_eleicao = linha.sg_ue
             nome_estado_eleicao = linha.nm_ue
@@ -89,20 +104,6 @@ def popular_dados_eleicao():
                 coligacao_partidos.save()
             except sqlite3.IntegrityError:
                 pass
-
-            #turno_eleicao
-            turno_eleicao = linha.nr_turno
-            data_eleicao = date(
-                int(linha.dt_eleicao[6:]),
-                int(linha.dt_eleicao[3:5]),
-                int(linha.dt_eleicao[0:2]),
-            )
-            try:
-                turno = Turno_Eleicao.objects.get(turno=turno_eleicao)
-            except Turno_Eleicao.DoesNotExist:
-                turno = Turno_Eleicao.objects.create(turno = turno_eleicao,
-                                                     data_eleicao=data_eleicao)
-                turno.save()
 
             # partido
             sigla = linha.sg_partido
