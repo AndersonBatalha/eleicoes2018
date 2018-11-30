@@ -7,30 +7,39 @@
 
 {% block body_block %}
 
+        <div class="ui breadcrumb">
+            <a class="section" href="{% url 'index' %}">Inicio</a>
+            <div class="divider"> / </div>
+            <a class="section" href="{% url 'listar_partidos' %}">Partidos</a>
+        </div>
+
+
     <div class="row">
         <p>
             <h1 class="ui large center aligned header">Partidos políticos</h1>
         </p>
     </div>
 
-    <div class="doubling row">
-        <table class="ui celled table">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Sigla</th>
-                    <th>Número</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for partido in partidos %}
-                    <tr>
-                        <td data-label="nome_partido">{{ partido.nome_partido }}</td>
-                        <td data-label="sigla_partido">{{ partido.sigla_partido }}</td>
-                        <td data-label="numero_partido">{{ partido.numero_partido }}</td>
+    <div class="ui center aligned grid">
+        <div class="ui twelve wide column">
+            <table class="ui celled table">
+                <thead>
+                    <tr align="center">
+                        <th>Nome</th>
+                        <th>Sigla</th>
+                        <th>Número</th>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {% for partido in partidos %}
+                        <tr>
+                            <td data-label="nome_partido">{{ partido.nome_partido }}</td>
+                            <td data-label="sigla_partido">{{ partido.sigla_partido }}</td>
+                            <td data-label="numero_partido">{{ partido.numero_partido }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 {% endblock %}

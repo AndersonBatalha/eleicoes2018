@@ -2,25 +2,59 @@
 {% load staticfiles %}
 
 {% block title_block %}
-    Candidatos por cargo
+    - Candidatos a {{ cargo.desc_cargo }}
 {% endblock %}
 
 {% block body_block %}
-    {% if candidatos %}
-        <h2>{{ qtd_resultados }} candidatos encontrados.</h2>
-        <ul>
-            {% for candidato in candidatos %}
-                <li>
-                    <a href="{% url 'detalhes_candidato' candidato.id %}">{{ candidato.nome_urna }}</a>
-                    <br> Partido: {{ candidato.partido }}
-                    <br>Local de nascimento: {{ candidato.municipio }}
-                    <br>Cargo: {{ candidato.cargo }}
-                </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <h3>Nao foi possivel localizar o cargo solicitado.</h3>
-    {% endif %}
-{% endblock %}
+	<div class="ui menu right vertical sidebar barra_lateral">
+		{% for local in locais %}
+			<a class="item" href="{% url 'candidatos_estado' local.abreviacao %}">{{ local.nome_local }}</a>
+		{% endfor %}
+	</div>
 
+    {% if candidatos %}
+		<div class="ui grid">
+			<div class="twelve wide column">
+				<div class="six column"></div>
+					<div class="ui breadcrumb">
+						<a class="section" href="{% url 'index' %}">Inicio</a>
+						<div class="divider"> / </div>
+						<a class="section">Candidatos</a>
+						<div class="divider"> / </div>
+						<div class="section">{{ cargo.desc_cargo }}</div>
+						<div class="divider"> / </div>
+						{% if qtd_resultados < 50 %}
+							<div class="active section">{{ candidatos.0.local_eleicao }}</div>
+						{% else %}
+							<div class="active section">TODOS OS ESTADOS</div>
+						{% endif %}
+					</div>
+				</div>
+				<div class="six column right floated">
+					<button class="ui button botao">
+					  Alterar estado
+					</button>
+				</div>
+			</div>
+			{% for candidato in candidatos %}
+				<div class="ui segment">
+					<a href="{% url 'detalhes_candidato' candidato.id %}"><h3>{{ candidato.nome_urna }}</h3></a>
+					<br>{{ candidato.partido }}
+				</div>
+			{% endfor %}
+
+			<h3>{{ qtd_resultados }} candidatos a {{ cargo.desc_cargo }}</h3>
+			<br><br>
+
+		{% else %}
+			<div class="ui negative message">
+				<i class="close icon"></i>
+				<div class="header">
+					Não foi possivel encontrar o local solicitado.
+				</div>
+				<p>Tente outra vez!</p>
+			</div>
+		{% endif %}
+
+{% endblock %}
 

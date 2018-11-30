@@ -5,53 +5,98 @@
 {% block title_block %}
     - {{ candidato.nome_urna }}
 {% endblock %}
+
 {% block body_block %}
     {% if candidato %}
-        <h1>Dados pessoais</h1>
-            <p>
-                Nome completo: {{ candidato.nome_completo }}<br>
-            </p>
-            <p>
-                Nome na urna eletronica: {{ candidato.nome_urna }}<br>
-            </p>
-            <p>
-                Data de nascimento: {{ candidato.data_nasc }}<br>
-            </p>
-            <p>
-                Genero: {{ candidato.genero }}<br>
-            </p>
-            <p>
-                Estado civil: {{ candidato.estado_civil }}<br>
-            </p>
-            <p>
-                Nacionalidade: {{ candidato.nacionalidade }}<br>
-            </p>
-            <p>
-                Escolaridade: {{ candidato.grau_instrucao }}<br>
-            </p>
-            <p>
-                Ocupaçao: {{ candidato.ocupacao }}<br>
-            </p>
-            <p>
-                Idade na data da posse: {{ candidato.idade_data_posse }}<br>
-            </p>
-            <p>
-                Etnia: {{ candidato.raca }}<br>
-            </p>
-            <p>
-                Contato: {{ candidato.email_contato }}<br>
-            </p>
-            <p>
-                Numero do candidato: {{ candidato.numero_candidato }}<br>
-            </p>
 
-            {{ cargo }}<br>
-            {{ partido }}<br>
-            {{ municipio }}<br>
-            {{ candidatura }}<br>
-            {{ local }}<br>
+		<div class="ui grid">
+			<div class="row">
+				<div class="ui breadcrumb">
+					<a class="section" href="{% url 'index' %}">Inicio</a>
+					<div class="divider"> / </div>
+					<a class="section">Candidatos</a>
+					<div class="divider"> / </div>
+					<div class="section">{{ local.eleicao | upper }}</div>
+					<div class="divider"> / </div>
+					<div class="section">{{ cargo.desc_cargo }}</div>
+					<div class="divider"> / </div>
+					<div class="active section">{{ candidato.nome_urna }} ({{ partido.sigla_partido }})</div>
+				</div>
+			</div>
+			<div class="fourteen wide column">
+
+				<div class="ui segment">
+					<div class="ui two column very relaxed grid">
+						<div class="column">
+							<h1>Dados pessoais</h1>
+							<div class="ui divider"></div>
+							<h3 class="ui header">Nome completo</h3>
+							<p>{{ candidato.nome_completo }}</p>
+							<h3 class="ui header">Data de nascimento:</h3>
+							<p>{{ candidato.data_nasc }}</p>
+							<h3 class="ui header">Local de nascimento:</h3>
+							<p>{{ municipio }}</p>
+							<h3 class="ui header">Genero</h3>
+							<p>{{ candidato.genero }}</p>
+							<h3 class="ui header">Estado civil</h3>
+							<p>{{ candidato.estado_civil }}</p>
+							<h3 class="ui header">Nacionalidade</h3>
+							<p>{{ candidato.nacionalidade }}</p>
+						</div>
+
+						<div class="column">
+							<br><br><br>
+							<h3 class="ui header">Escolaridade</h3>
+							<p>{{ candidato.grau_instrucao }}</p>
+							<h3 class="ui header">Ocupaçao</h3>
+							<p>{{ candidato.ocupacao }}</p>
+							<h3 class="ui header">Idade na data da posse</h3>
+							<p>{{ candidato.idade_data_posse }}</p>
+							<h3 class="ui header">Etnia</h3>
+							<p>{{ candidato.raca }}</p>
+							<h3 class="ui header">Contato</h3>
+							<p>{{ candidato.email_contato }}</p>
+							<h3 class="ui header">Numero do candidato</h3>
+							<p>{{ candidato.numero_candidato }}</p>
+{#							{{ candidatura }}#}
+						</div>
+					</div>
+				</div>
+
+				<div class="ui segment">
+					<div class="row">
+						<h1 class="ui header">Candidatura</h1>
+						<div class="ui divider"></div>
+						<h3 class="ui header">
+							Declaracao de bens
+							{% if candidatura.declaracao_bens == 'S' %}
+								<i class="icon check"></i>
+							{% else %}
+								<i class="icon close icon"></i>
+							{% endif %}
+						</h3>
+						<h3 class="ui header">
+							Disputa reeleicao
+							{% if candidatura.reeleicao == 'S' %}
+								<i class="icon check"></i>
+							{% else %}
+								<i class="icon close icon"></i>
+							{% endif %}
+						</h3>
+						<h3 class="ui header">Resultado</h3>
+						<p>{{ candidatura.resultado_eleicao }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
     {% else %}
-        <h2>Candidato nao foi encontrado!</h2>
+			<div class="ui negative message">
+				<i class="close icon"></i>
+				<div class="header">
+					Candidato nao foi encontrado!
+				</div>
+				<p>Tente outra vez!</p>
+			</div>
     {% endif %}
 
 {% endblock %}

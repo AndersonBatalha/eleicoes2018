@@ -6,6 +6,75 @@
 {% endblock %}
 
 {% block body_block %}
-    <img class="ui bordered centered big image" src="{% static 'images/logo.jpeg' %}">
+
+    <div class="ui twelve column grid">
+        <div class="sixteen wide column">
+            <img class="ui bordered centered image" src="{% static 'images/logo.jpeg' %}">
+        </div>
+
+        <div class="sixteen wide column">
+            <div class="ui centered stackable grid">
+
+                <div class="eight wide column">
+					<div class="ui accordion">
+						<div class="title">
+							<h3 class="ui header"><i class="dropdown icon"></i>
+							O que faz o presidente?</h3>
+						</div>
+						<div class="content">
+							{% for paragrafo in texto1 %}
+								<p class="ui justified container">{{ paragrafo }}</p>
+							{% endfor %}
+							<p class="ui justified container">
+								Fonte: <a href="{{ urls.0 }}" target="_blank">www.planalto.gov.br</a>
+
+							</p>
+						</div>
+
+					</div>
+                </div>
+
+                <div class="eight wide column">
+
+					<div class="ui accordion">
+						<div class="title">
+							<h3 class="ui header"><i class="dropdown icon"></i>
+							Qual a função do governador?</h3>
+						</div>
+						<div class="content">
+							{% for paragrafo in texto2 %}
+								<p class="ui justified container">{{ paragrafo }}</p>
+							{% endfor %}
+							<p class="ui justified container">
+								Fonte: <a href="{{ urls.1 }}" target="_blank">G1</a>
+							</p>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+
+		<div class="five wide column">
+			<h2 class="ui huge header">Links uteis</h2>
+			<br>
+			<div class="ui bulleted list">
+				<a class="item" href="http://www.tse.jus.br/eleicoes/eleicoes-2018" target="_blank">
+					Tribunal Superior Eleitoral
+				</a>
+				<a class="item" href="http://www.tre-sc.jus.br/site/eleicoes/eleicoes-2018/index.html" target="_blank">
+					TRE-SC
+				</a>
+				<a class="item" href="http://www.tse.jus.br/eleicoes/estatisticas/repositorio-de-dados-eleitorais-1/repositorio-de-dados-eleitorais" target="_blank">
+					Repositorio de dados eleitorais
+				</a>
+				<a class="item" href="http://www.ebc.com.br/eleicoes2018" target="_blank">
+					EBC
+				</a>
+				<a class="item" href="https://pt.wikipedia.org/wiki/Elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2018" target="_blank">
+					Eleiçoes presidenciais
+				</a>
+			</div>
+		</div>
+    </div>
 
 {% endblock %}

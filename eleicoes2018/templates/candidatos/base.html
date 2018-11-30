@@ -2,65 +2,68 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title>
-            Eleições
-            {% block title_block %}
-            {% endblock %}
-        </title>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/semantic.min.css' %} ">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			Eleições
+			{% block title_block %}
+			{% endblock %}
+		</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/semantic.min.css' %} ">
 
-        <link rel="stylesheet" type="text/css" href="{% static 'components/reset.css' %} ">
-        <link rel="stylesheet" type="text/css" href="{% static 'components/site.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'components/reset.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'components/site.css' %} ">
 
-        <link rel="stylesheet" type="text/css" href="{% static 'components/container.css' %} ">
-        <link rel="stylesheet" type="text/css" href="{% static 'components/grid.css' %} ">
-        <link rel="stylesheet" type="text/css" href="{% static 'components/header.css' %} ">
-        <link rel="stylesheet" type="text/css" href="{% static 'components/image.css' %} ">
-        <link rel="stylesheet" type="text/css" href="{% static 'components/menu.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'components/container.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'components/grid.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'components/header.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'components/image.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'components/menu.css' %} ">
 
-        <link rel="stylesheet" type="text/css" href="{% static 'components/divider.css' %} ">
-        <link rel="stylesheet" type="text/css" href="{% static 'components/list.css' %} ">
-        <link rel="stylesheet" type="text/css" href="{% static 'components/segment.css' %} ">
-        <link rel="stylesheet" type="text/css" href="{% static 'components/dropdown.css' %} ">
-        <link rel="stylesheet" type="text/css" href="{% static 'components/icon.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'components/divider.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'components/list.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'components/segment.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'components/dropdown.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'components/icon.css' %} ">
+	</head>
 
-    </head>
+	<body>
 
-    <body>
-        <div class="ui inverted menu">
-            <div class="ui container">
-                <a href="{% url 'index' %}" class="item">Eleições</a>
-                <div class="ui simple dropdown item">
-                    Candidatos
-                    <i class="dropdown icon"></i>
-                    <div class="ui inverted menu">
-                        <a href="{% url 'candidatos_cargo' 'presidente' %}" class="item" >Presidente</a>
-                        <a href="{% url 'candidatos_cargo' 'governador' %}" class="item" >Governador</a>
-                    </div>
-                </div>
-                <a href="{% url 'listar_partidos' %}" class="item" >Partidos</a>
-            </div>
-        </div>
+		<div class="ui inverted menu">
+			<div class="ui container">
+				<a href="{% url 'index' %}" class="item">Eleições</a>
+				<div class="ui simple dropdown item">
+					Candidatos
+					<i class="dropdown icon"></i>
+					<div class="ui inverted menu">
+						<a href="{% url 'candidatos_cargo' 'presidente' %}" class="item" >Presidente</a>
+						<a href="{% url 'candidatos_cargo' 'governador' %}" class="item" >
+							Governador
+						</a>
+					</div>
+				</div>
+				<a href="{% url 'listar_partidos' %}" class="item" >Partidos</a>
+			</div>
+		</div>
 
-        <div class="ui grid">
-            <div class="two wide column">
-            </div>
-            <div class="twelve wide column">
-                {% block body_block %}
+		<div class="ui grid">
+			<div class="one wide column">
+			</div>
+			<div class="fourteen wide column">
+				{% block body_block %}
 
 
-                {% endblock %}
-            </div>
-            <div class="two wide column">
-            </div>
+				{% endblock %}
+			</div>
+			<div class="one wide column">
+			</div>
 
-        </div>
+		</div>
 
-        <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-        <script src="{% static 'js/semantic.min.js' %}"></script>
+		<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+		<script src="{% static 'js/semantic.min.js' %}"></script>
+		<script src="{% static 'js/app-django-jquery.js' %}"></script>
 
-    </body>
+	</body>
 
 </html>
