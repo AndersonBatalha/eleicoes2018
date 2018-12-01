@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Instalação das dependências</title>
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="instalacao-das-dependencias">
+<h1>Instalação das dependências</h1>
+<p>Para executar o projeto e necessário ter instalado em sua máquina:</p>
+<ul class="simple">
+<li><p>Python 3.6.7</p></li>
+<li><p>Django 1.9.10</p></li>
+<li><p>virtualenv</p></li>
+<li><p>pip (gerenciador de pacotes do Python)</p></li>
+</ul>
+<p>Supondo que voce utilize Linux como sistema operacional, basta instalar pelo terminal:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sudo apt install python3.6 virtualenv virtualenvwrapper python-pip
+</pre></div>
+</div>
+<div class="section" id="criando-o-ambiente-virtual">
+<h2>Criando o ambiente virtual</h2>
+<blockquote>
+<div><p>Um ambiente virtual se caracteriza por isolar as aplicações instaladas para um determinado projeto, evitando conflitos de versões entre pacotes iguais que pertençam a projetos diferentes.</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Abra o terminal e execute:</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ mkvirtualenv -p <span class="sb">`</span>which python3<span class="sb">`</span> env
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Para instalar as dependências, entre na pasta do projeto e localize o arquivo requirements.txt. Esse arquivo contem os pacotes necessários para a execução do projeto.</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
+</pre></div>
+</div>
+<p>E assim o projeto está pronto para ser executado.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

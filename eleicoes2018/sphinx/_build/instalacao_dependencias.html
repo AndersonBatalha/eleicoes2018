@@ -1,0 +1,148 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Instalação das dependências &#8212; Documentação Eleições 2018 1.0.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Pesquisar" href="search.html" />
+    <link rel="next" title="Script para popular o banco de dados" href="popular_banco.html" />
+    <link rel="prev" title="Baixando o projeto" href="clonar_repositorio_git.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="instalacao-das-dependencias">
+<h1>Instalação das dependências<a class="headerlink" href="#instalacao-das-dependencias" title="Link permanente para este título">¶</a></h1>
+<p>Para executar o projeto e necessário ter instalado em sua máquina:</p>
+<ul class="simple">
+<li>Python 3.6.7</li>
+<li>Django 1.9.10</li>
+<li>virtualenv</li>
+<li>pip (gerenciador de pacotes do Python)</li>
+</ul>
+<p>Supondo que voce utilize Linux como sistema operacional, basta instalar pelo terminal:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sudo apt install python3.6 virtualenv virtualenvwrapper python-pip
+</pre></div>
+</div>
+<div class="section" id="criando-o-ambiente-virtual">
+<h2>Criando o ambiente virtual<a class="headerlink" href="#criando-o-ambiente-virtual" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div>Um ambiente virtual se caracteriza por isolar as aplicações instaladas para um determinado projeto, evitando conflitos de versões entre pacotes iguais que pertençam a projetos diferentes.</div></blockquote>
+<ol class="arabic simple">
+<li>Abra o terminal e execute:</li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ mkvirtualenv -p <span class="sb">`</span>which python3<span class="sb">`</span> env
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Para instalar as dependências, entre na pasta do projeto e localize o arquivo requirements.txt. Esse arquivo contem os pacotes necessários para a execução do projeto.</li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
+</pre></div>
+</div>
+<p>E assim o projeto está pronto para ser executado.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Eleições 2018</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegação</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introducao.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clonar_repositorio_git.html">Baixando o projeto</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Instalação das dependências</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#criando-o-ambiente-virtual">Criando o ambiente virtual</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="popular_banco.html">Script para popular o banco de dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="executar_projeto.html">Executando o projeto</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="clonar_repositorio_git.html" title="capítulo anterior">Baixando o projeto</a></li>
+      <li>Next: <a href="popular_banco.html" title="próximo capítulo">Script para popular o banco de dados</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Pesquisa rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Ir" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Anderson Pontes Batalha.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/instalacao_dependencias.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
