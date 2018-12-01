@@ -18,7 +18,7 @@
 			<div class="twelve wide column">
 				<div class="six column"></div>
 					<div class="ui breadcrumb">
-						<a class="section" href="{% url 'index' %}">Inicio</a>
+						<a class="section" href="{% url 'index' %}">Início</a>
 						<div class="divider"> / </div>
 						<a class="section">Candidatos</a>
 						<div class="divider"> / </div>
@@ -36,8 +36,7 @@
 			{% for candidato in candidatos %}
 				<div class="ui segment">
 					<a href="{% url 'detalhes_candidato' candidato.id %}"><h3>{{ candidato.nome_urna }}</h3></a>
-					<br>Partido: {{ candidato.partido }}
-					<br>Local de nascimento: {{ candidato.municipio }}
+					<br>{{ candidato.partido }}
 				</div>
 			{% endfor %}
 

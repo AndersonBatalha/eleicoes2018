@@ -39,6 +39,49 @@ def popular_dados_eleicao():
 
         for linha in csv_eleicoes:
             i+=1
+
+            # partido
+            sigla = linha.sg_partido
+            partido = Partido.objects.get(sigla_partido = sigla)
+
+            #cargo
+            desc_cargo = linha.ds_cargo
+            try:
+                cargo = Cargo.objects.get(desc_cargo=desc_cargo)
+            except Cargo.DoesNotExist:
+                cargo = Cargo.objects.create(desc_cargo=desc_cargo)
+                cargo.save()
+
+            #candidatura
+            reeleicao = linha.st_reeleicao
+            declaracao_bens = linha.st_declarar_bens
+            resultado_candidato = linha.ds_sit_tot_turno
+
+            candidatura = Candidatura.objects.create(
+                reeleicao = reeleicao,
+                declaracao_bens = declaracao_bens,
+                resultado_eleicao = resultado_candidato,
+            )
+            candidatura.save()
+
+            #local de nascimento
+            municipio_nasc = linha.nm_municipio_nascimento
+            uf_nasc = linha.sg_uf_nascimento
+
+            try:
+                estado_nasc = Estado_Nascimento.objects.get(UF=uf_nasc)
+            except Estado_Nascimento.DoesNotExist:
+                estado_nasc = Estado_Nascimento.objects.create(UF=uf_nasc)
+                estado_nasc.save()
+
+            try:
+                municipio = Municipio.objects.get(nome_municipio=municipio_nasc)
+            except Municipio.DoesNotExist:
+                municipio = Municipio.objects.create(
+                    nome_municipio=municipio_nasc,
+                    UF=estado_nasc,
+                )
+
             # eleicao
             descricao_eleicao = linha.ds_eleicao
             ano = linha.ano_eleicao
@@ -83,70 +126,6 @@ def popular_dados_eleicao():
                 )
                 local_eleicao.save()
 
-            # coligacao
-            nome_coligacao = linha.nm_coligacao
-            coligacao = linha.ds_composicao_coligacao.split(' / ')
-
-            try:
-                c = Coligacao.objects.get(nome_coligacao=nome_coligacao)
-            except Coligacao.DoesNotExist:
-                c = Coligacao.objects.create(
-                    nome_coligacao=nome_coligacao,
-                    local=local_eleicao
-                )
-                c.save()
-
-            try:
-                coligacao_partidos = Coligacao_Partidos.objects.create(coligacao = c)
-                for partido in coligacao:
-                    p = Partido.objects.get(sigla_partido=partido)
-                    coligacao_partidos.partido.add(p)
-                coligacao_partidos.save()
-            except sqlite3.IntegrityError:
-                pass
-
-            # partido
-            sigla = linha.sg_partido
-            partido = Partido.objects.get(sigla_partido = sigla)
-
-            #cargo
-            desc_cargo = linha.ds_cargo
-            try:
-                cargo = Cargo.objects.get(desc_cargo=desc_cargo)
-            except Cargo.DoesNotExist:
-                cargo = Cargo.objects.create(desc_cargo=desc_cargo)
-                cargo.save()
-
-            #candidatura
-            reeleicao = linha.st_reeleicao
-            declaracao_bens = linha.st_declarar_bens
-            resultado_candidato = linha.ds_sit_tot_turno
-
-            candidatura = Candidatura.objects.create(
-                reeleicao = reeleicao,
-                declaracao_bens = declaracao_bens,
-                resultado_eleicao = resultado_candidato,
-            )
-            candidatura.save()
-
-            #local de nascimento
-            municipio_nasc = linha.nm_municipio_nascimento
-            uf_nasc = linha.sg_uf_nascimento
-
-            try:
-                estado_nasc = Estado_Nascimento.objects.get(UF=uf_nasc)
-            except Estado_Nascimento.DoesNotExist:
-                estado_nasc = Estado_Nascimento.objects.create(UF=uf_nasc)
-                estado_nasc.save()
-
-            try:
-                municipio = Municipio.objects.get(nome_municipio=municipio_nasc)
-            except Municipio.DoesNotExist:
-                municipio = Municipio.objects.create(
-                    nome_municipio=municipio_nasc,
-                    UF=estado_nasc,
-                )
-
             #candidato
             nome_candidato = linha.nm_candidato
             nome_urna_candidato = linha.nm_urna_candidato
@@ -186,6 +165,29 @@ def popular_dados_eleicao():
                     local_eleicao = local_eleicao,
                 )
                 candidato.save()
+            except sqlite3.IntegrityError:
+                pass
+
+            # coligacao
+            nome_coligacao = linha.nm_coligacao
+            coligacao = linha.ds_composicao_coligacao.split(' / ')
+
+            try:
+                c = Coligacao.objects.get(nome_coligacao=nome_coligacao)
+            except Coligacao.DoesNotExist:
+                c = Coligacao.objects.create(
+                    nome_coligacao=nome_coligacao,
+                    local=local_eleicao,
+                )
+                c.candidatos.add(candidato)
+                c.save()
+
+            try:
+                coligacao_partidos = Coligacao_Partidos.objects.create(coligacao = c)
+                for partido in coligacao:
+                    p = Partido.objects.get(sigla_partido=partido)
+                    coligacao_partidos.partido.add(p)
+                coligacao_partidos.save()
             except sqlite3.IntegrityError:
                 pass
 

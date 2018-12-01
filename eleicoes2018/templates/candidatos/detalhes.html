@@ -12,7 +12,7 @@
 		<div class="ui grid">
 			<div class="row">
 				<div class="ui breadcrumb">
-					<a class="section" href="{% url 'index' %}">Inicio</a>
+					<a class="section" href="{% url 'index' %}">Início</a>
 					<div class="divider"> / </div>
 					<a class="section">Candidatos</a>
 					<div class="divider"> / </div>
@@ -36,7 +36,7 @@
 							<p>{{ candidato.data_nasc }}</p>
 							<h3 class="ui header">Local de nascimento:</h3>
 							<p>{{ municipio }}</p>
-							<h3 class="ui header">Genero</h3>
+							<h3 class="ui header">Gênero</h3>
 							<p>{{ candidato.genero }}</p>
 							<h3 class="ui header">Estado civil</h3>
 							<p>{{ candidato.estado_civil }}</p>
@@ -48,7 +48,7 @@
 							<br><br><br>
 							<h3 class="ui header">Escolaridade</h3>
 							<p>{{ candidato.grau_instrucao }}</p>
-							<h3 class="ui header">Ocupaçao</h3>
+							<h3 class="ui header">Ocupação</h3>
 							<p>{{ candidato.ocupacao }}</p>
 							<h3 class="ui header">Idade na data da posse</h3>
 							<p>{{ candidato.idade_data_posse }}</p>
@@ -56,9 +56,8 @@
 							<p>{{ candidato.raca }}</p>
 							<h3 class="ui header">Contato</h3>
 							<p>{{ candidato.email_contato }}</p>
-							<h3 class="ui header">Numero do candidato</h3>
+							<h3 class="ui header">Número do candidato</h3>
 							<p>{{ candidato.numero_candidato }}</p>
-{#							{{ candidatura }}#}
 						</div>
 					</div>
 				</div>
@@ -68,7 +67,7 @@
 						<h1 class="ui header">Candidatura</h1>
 						<div class="ui divider"></div>
 						<h3 class="ui header">
-							Declaracao de bens
+							Declaração de bens
 							{% if candidatura.declaracao_bens == 'S' %}
 								<i class="icon check"></i>
 							{% else %}
@@ -76,14 +75,23 @@
 							{% endif %}
 						</h3>
 						<h3 class="ui header">
-							Disputa reeleicao
-							{% if candidatura.reeleicao == 'S' %}
-								<i class="icon check"></i>
+							{% if candidatura %}
+								Disputa a reeleição
+								{% if candidatura.reeleicao == 'S' %}
+									<i class="icon check"></i>
+								{% else %}
+									<i class="icon close icon"></i>
+								{% endif %}
 							{% else %}
-								<i class="icon close icon"></i>
+								<div class="ui negative message">
+									<i class="close icon"></i>
+									<div class="header">
+										Não existem informações disponíveis sobre a candidatura.
+									</div>
+								</div>
 							{% endif %}
 						</h3>
-						<h3 class="ui header">Resultado</h3>
+						<h3 class="ui header">Resultado na eleição</h3>
 						<p>{{ candidatura.resultado_eleicao }}</p>
 					</div>
 				</div>
@@ -93,7 +101,7 @@
 			<div class="ui negative message">
 				<i class="close icon"></i>
 				<div class="header">
-					Candidato nao foi encontrado!
+					Candidato não foi encontrado!
 				</div>
 				<p>Tente outra vez!</p>
 			</div>

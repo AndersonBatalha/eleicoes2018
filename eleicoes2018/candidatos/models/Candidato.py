@@ -1,5 +1,4 @@
 from django.db import models
-from django.template.defaultfilters import slugify
 
 from .Candidatura import Candidatura
 from .Cargo import Cargo
@@ -20,7 +19,6 @@ class Candidato(models.Model):
     nacionalidade = models.CharField(max_length=50, help_text="Nacionalidade")
     data_nasc = models.DateField(help_text="Data de nascimento")
     numero_candidato = models.IntegerField(help_text="Número do candidato")
-    slug_nome = models.SlugField(blank=True)
 
     cargo = models.ForeignKey(Cargo)
     partido = models.ForeignKey(Partido)
@@ -30,10 +28,6 @@ class Candidato(models.Model):
 
     class Meta:
         verbose_name_plural = "Candidatos"
-
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.nome_urna)
-        super(Candidato,self).save(*args, **kwargs)
 
     def __str__(self):
         return self.nome_urna
