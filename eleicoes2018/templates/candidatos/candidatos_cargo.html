@@ -1,8 +1,9 @@
 {% extends 'candidatos/base.html' %}
 {% load staticfiles %}
+{% load i18n %}
 
 {% block title_block %}
-    - Candidatos a {{ cargo.desc_cargo }}
+    - {% trans 'Candidatos a' %} {{ cargo.desc_cargo }}
 {% endblock %}
 
 {% block body_block %}
@@ -17,22 +18,22 @@
 			<div class="twelve wide column">
 				<div class="six column"></div>
 					<div class="ui breadcrumb">
-						<a class="section" href="{% url 'index' %}">Início</a>
+						<a class="section" href="{% url 'index' %}">{% trans 'Início' %}</a>
 						<div class="divider"> / </div>
-						<a class="section">Candidatos</a>
+						<a class="section">{% trans 'Candidatos' %}</a>
 						<div class="divider"> / </div>
 						<div class="section">{{ cargo.desc_cargo }}</div>
 						<div class="divider"> / </div>
 						{% if qtd_resultados < 50 %}
 							<div class="active section">{{ candidatos.0.local_eleicao }}</div>
 						{% else %}
-							<div class="active section">TODOS OS ESTADOS</div>
+							<div class="active section">{% trans 'TODOS OS ESTADOS' %}</div>
 						{% endif %}
 					</div>
 				</div>
 				<div class="six column right floated">
 					<button class="ui button botao">
-					  Alterar estado
+						{% trans 'Alterar estado' %}
 					</button>
 				</div>
 			</div>
@@ -43,16 +44,16 @@
 				</div>
 			{% endfor %}
 
-			<h3>{{ qtd_resultados }} candidatos a {{ cargo.desc_cargo }}</h3>
+			<h3>{{ qtd_resultados }} {% trans 'candidatos a' %} {{ cargo.desc_cargo }}</h3>
 			<br><br>
 
 		{% else %}
 			<div class="ui negative message">
 				<i class="close icon"></i>
 				<div class="header">
-					Não foi possivel encontrar o local solicitado.
+					{% trans 'Não foi possivel encontrar o local solicitado.' %}
 				</div>
-				<p>Tente outra vez!</p>
+				<p>{% trans 'Tente outra vez!' %}</p>
 			</div>
 		{% endif %}
 

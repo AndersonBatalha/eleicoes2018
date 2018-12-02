@@ -1,0 +1,357 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-02 01:15-0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: eleicoes2018/eleicoes2018/settings.py:126
+msgid "Portuguese"
+msgstr ""
+
+#: eleicoes2018/eleicoes2018/settings.py:127
+msgid "English"
+msgstr ""
+
+#: eleicoes2018/templates/candidatos/base.html:9
+#: eleicoes2018/templates/candidatos/base.html:35
+msgid "Eleições"
+msgstr "Elections"
+
+#: eleicoes2018/templates/candidatos/base.html:37
+#: eleicoes2018/templates/candidatos/candidatos_cargo.html:23
+#: eleicoes2018/templates/candidatos/candidatos_estado.html:24
+#: eleicoes2018/templates/candidatos/detalhes.html:17
+msgid "Candidatos"
+msgstr "Candidates"
+
+#: eleicoes2018/templates/candidatos/base.html:41
+msgid "Presidente"
+msgstr "President"
+
+#: eleicoes2018/templates/candidatos/base.html:45
+msgid "Governador"
+msgstr "Governor"
+
+#: eleicoes2018/templates/candidatos/base.html:49
+#: eleicoes2018/templates/candidatos/partidos.html:6
+msgid "Partidos"
+msgstr "Political parties"
+
+#: eleicoes2018/templates/candidatos/base.html:51
+msgid "Selecione o idioma"
+msgstr "Select the language"
+
+#: eleicoes2018/templates/candidatos/base.html:55
+msgid "Português"
+msgstr "Portuguese"
+
+#: eleicoes2018/templates/candidatos/base.html:58
+msgid "Inglês"
+msgstr "English"
+
+#: eleicoes2018/templates/candidatos/candidatos_cargo.html:6
+#, fuzzy
+#| msgid "Candidatos"
+msgid "Candidatos a"
+msgstr "Candidates for"
+
+#: eleicoes2018/templates/candidatos/candidatos_cargo.html:21
+#: eleicoes2018/templates/candidatos/candidatos_estado.html:22
+#: eleicoes2018/templates/candidatos/detalhes.html:15
+#: eleicoes2018/templates/candidatos/partidos.html:13
+msgid "Início"
+msgstr "Home"
+
+#: eleicoes2018/templates/candidatos/candidatos_cargo.html:30
+msgid "TODOS OS ESTADOS"
+msgstr "ALL STATES"
+
+#: eleicoes2018/templates/candidatos/candidatos_cargo.html:36
+#: eleicoes2018/templates/candidatos/candidatos_estado.html:33
+msgid "Alterar estado"
+msgstr "Change Federation Unit"
+
+#: eleicoes2018/templates/candidatos/candidatos_cargo.html:47
+#: eleicoes2018/templates/candidatos/candidatos_estado.html:44
+#, fuzzy
+#| msgid "Candidatos"
+msgid "candidatos a"
+msgstr "candidates for"
+
+#: eleicoes2018/templates/candidatos/candidatos_cargo.html:54
+#: eleicoes2018/templates/candidatos/candidatos_estado.html:51
+msgid "Não foi possivel encontrar o local solicitado."
+msgstr "Could not find the requested location."
+
+#: eleicoes2018/templates/candidatos/candidatos_cargo.html:56
+#: eleicoes2018/templates/candidatos/candidatos_estado.html:53
+#: eleicoes2018/templates/candidatos/detalhes.html:106
+msgid "Tente outra vez!"
+msgstr "Try again!"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:31
+msgid "Dados pessoais"
+msgstr "Personal information"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:33
+msgid "Nome completo"
+msgstr "Full name"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:35
+msgid "Data de nascimento"
+msgstr "Date of birth"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:37
+msgid "Local de nascimento"
+msgstr "Birthplace"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:39
+msgid "Gênero"
+msgstr "Gender"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:41
+msgid "Estado civil"
+msgstr "Marital status"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:43
+msgid "Nacionalidade"
+msgstr "Citizenship"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:49
+msgid "Escolaridade"
+msgstr "Schooling"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:51
+msgid "Ocupação"
+msgstr "Occupation"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:53
+msgid "Idade na data da posse"
+msgstr "Age at date of possession"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:55
+msgid "Etnia"
+msgstr "Ethnicity"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:57
+msgid "Contato"
+msgstr "Contact"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:59
+msgid "Número do candidato"
+msgstr "Candidate number"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:67
+#, fuzzy
+#| msgid "Candidatos"
+msgid "Candidatura"
+msgstr "Candidacy"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:70
+msgid "Declaração de bens"
+msgstr "Declaration of property"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:79
+msgid "Disputa a reeleição"
+msgstr "Dispute for re-election"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:89
+msgid "Não existem informações disponíveis sobre a candidatura."
+msgstr "No information is available on the candidacy."
+
+#: eleicoes2018/templates/candidatos/detalhes.html:94
+msgid "Resultado na eleição"
+msgstr "Result in the election"
+
+#: eleicoes2018/templates/candidatos/detalhes.html:104
+msgid "Candidato não foi encontrado."
+msgstr "Candidate was not found."
+
+#: eleicoes2018/templates/candidatos/index.html:6
+msgid "Página inicial"
+msgstr "Home"
+
+#: eleicoes2018/templates/candidatos/index.html:23
+msgid "O que faz o presidente?"
+msgstr "What does the president do?"
+
+#: eleicoes2018/templates/candidatos/index.html:28
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t\tO Poder Executivo tem a função de governar o povo e "
+"administrar os interesses públicos, de acordo com as leis previstas na "
+"Constituição Federal. No Brasil, País que adota o regime presidencialista, o "
+"líder do Poder Executivo é o Presidente da República, que tem o papel de "
+"chefe de Estado e de governo.\n"
+"\t\t\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"The Executive Power has the function of governing the people and "
+"administering the public interests, according to the laws provided for in "
+"the Federal Constitution. In Brazil, the country that adopts the "
+"presidential regime, the leader of the Executive Branch is the President of "
+"the Republic, who has the role of head of state and government."
+
+#: eleicoes2018/templates/candidatos/index.html:33
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t\tO Presidente é eleito democraticamente para mandato com "
+"duração de quatro anos e possibilidade de uma reeleição consecutiva para "
+"igual período. Ao tomar posse, o chefe do Executivo tem o dever de sustentar "
+"a integridade e a independência do Brasil, apresentar um plano de governo "
+"com programas prioritários, projeto de lei de diretrizes orçamentárias e as "
+"propostas de orçamento.\n"
+"\t\t\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"The President is elected democratically for a term of four years and the "
+"possibility of aconsecutive re-election for the same period. Upon taking "
+"office, the Chief Executive has a duty to uphold the integrity and "
+"independence of Brazil, present a government plan with priority programs, "
+"budget guidelines bill, and budget proposals."
+
+#: eleicoes2018/templates/candidatos/index.html:38
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t\tCabe ao Poder Executivo executar as leis elaboradas pelo "
+"Poder Legislativo, mas o Presidente da República também pode iniciar esse "
+"processo. Em caso de relevância e urgência, adota medidas provisórias e "
+"propõe emendas à Constituição, projetos de leis complementares e ordinárias "
+"e leis delegadas.\n"
+"\t\t\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"It is up to the Executive Branch to execute the laws drafted by the "
+"Legislative Branch, but the President of the Republic can also initiate this "
+"process. In case of relevance and urgency, it adopts provisional measures "
+"and proposes amendments to the Constitution, draft complementary and "
+"ordinary laws and delegated laws."
+
+#: eleicoes2018/templates/candidatos/index.html:43
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t\tO Presidente da República também tem o direito de rejeitar "
+"ou sancionar matérias e ainda, decretar intervenção federal nos Estados, o "
+"estado de defesa e o estado de sítio; manter relações com Estados "
+"estrangeiros e credenciar seus representantes diplomáticos; celebrar "
+"tratados, convenções e atos internacionais, sujeitos a referendo do "
+"Congresso Nacional. Compete ao cargo a concessão de indulto e a comutação de "
+"penas, ou seja, substituir uma pena mais grave, imposta ao réu, por outra "
+"mais branda.\n"
+"\t\t\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"The President of the Republic also has the right to reject or sanction "
+"matters and also to decree federal intervention in the States, the state of "
+"defense and the state of siege; maintain relations with foreign states and "
+"accredit their diplomatic representatives; to conclude treaties, conventions "
+"and international acts, subject to a referendum of the National Congress. It "
+"is incumbent upon the office to grant pardon and commutation of sentences, "
+"that is, to substitute a more severe penalty imposed on the defendant for a "
+"more lenient one."
+
+#: eleicoes2018/templates/candidatos/index.html:48
+#: eleicoes2018/templates/candidatos/index.html:80
+msgid "Fonte"
+msgstr "Source"
+
+#: eleicoes2018/templates/candidatos/index.html:61
+msgid "Qual a função do governador?"
+msgstr "What is the role of the governor?"
+
+#: eleicoes2018/templates/candidatos/index.html:65
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t\tCabe ao governador exercer a direção superior da "
+"administração estadual e nomear secretários e altos dirigentes das empresas "
+"estatais. Além disso, propõe, aprova ou veta leis, e baixa decretos e "
+"regulamentos.\n"
+"\t\t\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"It is incumbent upon the governor to exercise the superior direction of the "
+"state administration and to appoint secretaries and senior managers of state-"
+"owned enterprises. In addition, it proposes, approves or vetoes laws, and "
+"low decrees and regulations."
+
+#: eleicoes2018/templates/candidatos/index.html:70
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t\tSobre a questão financeira, o governador negocia com "
+"ministros e com o presidente da República o recebimento de verbas para o "
+"Estado que ele representa. Apresenta à Assembleia Legislativa documentos com "
+"os planos orçamentários dos próximos anos.\n"
+"\t\t\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"On the financial question, the governor negotiates with ministers and with "
+"the president of the Republic the receipt of funds for the State that he "
+"represents. It presents to the Legislative Assembly documents with the "
+"budget plans of the coming years."
+
+#: eleicoes2018/templates/candidatos/index.html:75
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t\tOutra função do governador é implementar políticas públicas "
+"e programas estaduais em áreas como saúde e educação. Para isso, conta com o "
+"auxílio dos secretários estaduais.\n"
+"\t\t\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"Another function of the governor is to implement public policies and state "
+"programs in areas such as health and education. For this, it counts with the "
+"assistance of the state secretaries."
+
+#: eleicoes2018/templates/candidatos/index.html:89
+msgid "Links úteis"
+msgstr "See more at"
+
+#: eleicoes2018/templates/candidatos/index.html:93
+msgid "Tribunal Superior Eleitoral"
+msgstr "Higher Electoral Court"
+
+#: eleicoes2018/templates/candidatos/index.html:96
+msgid "TRE-SC"
+msgstr "Regional Election Court in Santa Catarina"
+
+#: eleicoes2018/templates/candidatos/index.html:99
+msgid "Repositório de dados eleitorais"
+msgstr "Electoral data repository"
+
+#: eleicoes2018/templates/candidatos/index.html:102
+msgid "EBC"
+msgstr "Communication Brazil Company"
+
+#: eleicoes2018/templates/candidatos/index.html:105
+msgid "Eleições presidenciais em 2018"
+msgstr "Presidential elections in 2018"
+
+#: eleicoes2018/templates/candidatos/partidos.html:17
+#: eleicoes2018/templates/candidatos/partidos.html:25
+msgid "Partidos políticos"
+msgstr "Political parties in Brazil"
+
+#: eleicoes2018/templates/candidatos/partidos.html:35
+msgid "Nome"
+msgstr "Name"
+
+#: eleicoes2018/templates/candidatos/partidos.html:36
+msgid "Sigla"
+msgstr "Initials"
+
+#: eleicoes2018/templates/candidatos/partidos.html:37
+msgid "Número"
+msgstr "Political party number"

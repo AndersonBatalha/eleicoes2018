@@ -1,8 +1,9 @@
 {% extends 'candidatos/base.html' %}
+{% load i18n %}
 {% load staticfiles %}
 
 {% block title_block %}
-    - Página inicial
+    - {% trans 'Página inicial' %}
 {% endblock %}
 
 {% block body_block %}
@@ -19,14 +20,32 @@
 					<div class="ui accordion">
 						<div class="title">
 							<h3 class="ui header"><i class="dropdown icon"></i>
-							O que faz o presidente?</h3>
+								{% trans "O que faz o presidente?" %}
+							</h3>
 						</div>
 						<div class="content">
-							{% for paragrafo in texto1 %}
-								<p class="ui justified container">{{ paragrafo }}</p>
-							{% endfor %}
 							<p class="ui justified container">
-								Fonte: <a href="{{ urls.0 }}" target="_blank">www.planalto.gov.br</a>
+								{% blocktrans %}
+								O Poder Executivo tem a função de governar o povo e administrar os interesses públicos, de acordo com as leis previstas na Constituição Federal. No Brasil, País que adota o regime presidencialista, o líder do Poder Executivo é o Presidente da República, que tem o papel de chefe de Estado e de governo.
+								{% endblocktrans %}
+							</p>
+							<p class="ui justified container">
+								{% blocktrans %}
+								O Presidente é eleito democraticamente para mandato com duração de quatro anos e possibilidade de uma reeleição consecutiva para igual período. Ao tomar posse, o chefe do Executivo tem o dever de sustentar a integridade e a independência do Brasil, apresentar um plano de governo com programas prioritários, projeto de lei de diretrizes orçamentárias e as propostas de orçamento.
+								{% endblocktrans %}
+							</p>
+							<p class="ui justified container">
+								{% blocktrans %}
+								Cabe ao Poder Executivo executar as leis elaboradas pelo Poder Legislativo, mas o Presidente da República também pode iniciar esse processo. Em caso de relevância e urgência, adota medidas provisórias e propõe emendas à Constituição, projetos de leis complementares e ordinárias e leis delegadas.
+								{% endblocktrans %}
+							</p>
+							<p class="ui justified container">
+								{% blocktrans %}
+								O Presidente da República também tem o direito de rejeitar ou sancionar matérias e ainda, decretar intervenção federal nos Estados, o estado de defesa e o estado de sítio; manter relações com Estados estrangeiros e credenciar seus representantes diplomáticos; celebrar tratados, convenções e atos internacionais, sujeitos a referendo do Congresso Nacional. Compete ao cargo a concessão de indulto e a comutação de penas, ou seja, substituir uma pena mais grave, imposta ao réu, por outra mais branda.
+								{% endblocktrans %}
+							</p>
+							<p class="ui justified container">
+								{% trans 'Fonte' %}: <a href="{{ urls.0 }}" target="_blank">www.planalto.gov.br</a>
 
 							</p>
 						</div>
@@ -39,14 +58,26 @@
 					<div class="ui accordion">
 						<div class="title">
 							<h3 class="ui header"><i class="dropdown icon"></i>
-							Qual a função do governador?</h3>
+							{% trans 'Qual a função do governador?' %}</h3>
 						</div>
 						<div class="content">
-							{% for paragrafo in texto2 %}
-								<p class="ui justified container">{{ paragrafo }}</p>
-							{% endfor %}
 							<p class="ui justified container">
-								Fonte: <a href="{{ urls.1 }}" target="_blank">G1</a>
+								{% blocktrans %}
+								Cabe ao governador exercer a direção superior da administração estadual e nomear secretários e altos dirigentes das empresas estatais. Além disso, propõe, aprova ou veta leis, e baixa decretos e regulamentos.
+								{% endblocktrans %}
+							</p>
+							<p class="ui justified container">
+								{% blocktrans %}
+								Sobre a questão financeira, o governador negocia com ministros e com o presidente da República o recebimento de verbas para o Estado que ele representa. Apresenta à Assembleia Legislativa documentos com os planos orçamentários dos próximos anos.
+								{% endblocktrans %}
+							</p>
+							<p class="ui justified container">
+								{% blocktrans %}
+								Outra função do governador é implementar políticas públicas e programas estaduais em áreas como saúde e educação. Para isso, conta com o auxílio dos secretários estaduais.
+								{% endblocktrans %}
+							</p>
+							<p class="ui justified container">
+								{% trans 'Fonte' %}: <a href="{{ urls.1 }}" target="_blank">G1</a>
 							</p>
 						</div>
 					</div>
@@ -55,23 +86,23 @@
         </div>
 
 		<div class="five wide column">
-			<h2 class="ui huge header">Links úteis</h2>
+			<h2 class="ui huge header">{% trans 'Links úteis' %}</h2>
 			<br>
 			<div class="ui bulleted list">
 				<a class="item" href="http://www.tse.jus.br/eleicoes/eleicoes-2018" target="_blank">
-					Tribunal Superior Eleitoral
+					{% trans 'Tribunal Superior Eleitoral' %}
 				</a>
 				<a class="item" href="http://www.tre-sc.jus.br/site/eleicoes/eleicoes-2018/index.html" target="_blank">
-					TRE-SC
+					{% trans 'TRE-SC' %}
 				</a>
 				<a class="item" href="http://www.tse.jus.br/eleicoes/estatisticas/repositorio-de-dados-eleitorais-1/repositorio-de-dados-eleitorais" target="_blank">
-					Repositório de dados eleitorais
+					{% trans 'Repositório de dados eleitorais' %}
 				</a>
 				<a class="item" href="http://www.ebc.com.br/eleicoes2018" target="_blank">
-					EBC
+					{% trans 'EBC' %}
 				</a>
 				<a class="item" href="https://pt.wikipedia.org/wiki/Elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2018" target="_blank">
-					Eleições presidenciais
+					{% trans 'Eleições presidenciais em 2018' %}
 				</a>
 			</div>
 		</div>

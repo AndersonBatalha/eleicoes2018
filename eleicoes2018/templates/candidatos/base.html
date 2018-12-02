@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load staticfiles %}
 
 <!DOCTYPE html>
@@ -5,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			Eleições
+			{% trans "Eleições" %}
 			{% block title_block %}
 			{% endblock %}
 		</title>
@@ -31,31 +32,43 @@
 
 		<div class="ui inverted menu">
 			<div class="ui container">
-				<a href="{% url 'index' %}" class="item">Eleições</a>
+				<a href="{% url 'index' %}" class="item">{% trans "Eleições" %}</a>
 				<div class="ui simple dropdown item">
-					Candidatos
+					{% trans "Candidatos" %}
 					<i class="dropdown icon"></i>
 					<div class="ui inverted menu">
-						<a href="{% url 'candidatos_cargo' 'presidente' %}" class="item" >Presidente</a>
+						<a href="{% url 'candidatos_cargo' 'presidente' %}" class="item" >
+							{% trans "Presidente" %}
+						</a>
+
 						<a href="{% url 'candidatos_cargo' 'governador' %}" class="item" >
-							Governador
+							{% trans "Governador" %}
 						</a>
 					</div>
 				</div>
-				<a href="{% url 'listar_partidos' %}" class="item" >Partidos</a>
+				<a href="{% url 'listar_partidos' %}" class="item" >{% trans "Partidos" %}</a>
+				<div class="ui simple dropdown item swing right">
+					{% trans "Selecione o idioma" %}
+					<i class="dropdown icon"></i>
+					<div class="ui inverted menu">
+						<a href="/pt" class="item">
+							<i class="brazil flag"></i> {% trans 'Português' %}
+						</a>
+						<a href="/en" class="item">
+							<i class="uk flag"></i> {% trans 'Inglês' %}
+						</a>
+					</div>
+				</div>
+
 			</div>
 		</div>
 
 		<div class="ui grid">
-			<div class="one wide column">
-			</div>
-			<div class="fourteen wide column">
+			<div class="fourteen wide centered column">
 				{% block body_block %}
 
 
 				{% endblock %}
-			</div>
-			<div class="one wide column">
 			</div>
 
 		</div>

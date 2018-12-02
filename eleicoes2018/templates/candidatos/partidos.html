@@ -1,22 +1,29 @@
 {% extends 'candidatos/base.html' %}
 {% load staticfiles %}
+{% load i18n %}
 
 {% block title_block %}
-    - Partidos
+    - {% trans 'Partidos' %}
 {% endblock %}
 
 {% block body_block %}
 
-        <div class="ui breadcrumb">
-            <a class="section" href="{% url 'index' %}">Início</a>
-            <div class="divider"> / </div>
-            <a class="section" href="{% url 'listar_partidos' %}">Partidos</a>
-        </div>
+	<div class="ui breadcrumb">
+		<a class="section" href="{% url 'index' %}">
+			{% trans 'Início' %}
+		</a>
+		<div class="divider"> / </div>
+		<a class="section" href="{% url 'listar_partidos' %}">
+			{% trans 'Partidos políticos' %}
+		</a>
+	</div>
 
 
     <div class="row">
         <p>
-            <h1 class="ui large center aligned header">Partidos políticos</h1>
+            <h1 class="ui large center aligned header">
+				{% trans 'Partidos políticos' %}
+			</h1>
         </p>
     </div>
 
@@ -25,9 +32,9 @@
             <table class="ui celled table">
                 <thead>
                     <tr align="center">
-                        <th>Nome</th>
-                        <th>Sigla</th>
-                        <th>Número</th>
+                        <th>{% trans 'Nome' %}</th>
+                        <th>{% trans 'Sigla' %}</th>
+                        <th>{% trans 'Número' %}</th>
                     </tr>
                 </thead>
                 <tbody>
