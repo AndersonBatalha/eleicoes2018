@@ -16,13 +16,14 @@ class CandidatosCargo(View):
             self.cargo = Cargo.objects.get(desc_cargo__iexact=cargo)
             self.candidatos = Candidato.objects.filter(cargo = self.cargo).order_by('nome_urna')
             self.locais = Local_Eleicao.objects.all().exclude(abreviacao='BR')
+            self.context_dict['qtd_resultados'] = len(self.candidatos)
         except Cargo.DoesNotExist:
-            self.context_dict['cargo'] = None
-            self.context_dict['candidatos'] = None
+            self.cargo = None
+            self.candidatos = None
+            self.locais = None
 
         self.context_dict['cargo'] = self.cargo
         self.context_dict['candidatos'] = self.candidatos
-        self.context_dict['qtd_resultados'] = len(self.candidatos)
         self.context_dict['locais'] = self.locais
 
         return render(request, self.template, self.context_dict)

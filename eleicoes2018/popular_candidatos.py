@@ -179,8 +179,8 @@ def popular_dados_eleicao():
                     nome_coligacao=nome_coligacao,
                     local=local_eleicao,
                 )
-                c.candidatos.add(candidato)
-                c.save()
+            c.candidatos.add(candidato)
+            c.save()
 
             try:
                 coligacao_partidos = Coligacao_Partidos.objects.create(coligacao = c)
@@ -203,3 +203,5 @@ if __name__ == '__main__':
     popular_dados_partidos()
     print("\nPopulando base de dados dos candidatos...")
     popular_dados_eleicao()
+    os.system('python manage.py createsuperuser')
+

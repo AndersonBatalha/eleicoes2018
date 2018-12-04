@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-03 23:00-0200\n"
+"POT-Creation-Date: 2018-12-03 22:32-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr ""
 
 #: templates/candidatos/base.html:9 templates/candidatos/base.html:35
 msgid "Eleições"
-msgstr ""
+msgstr "Elections"
 
 #: templates/candidatos/base.html:37
 #: templates/candidatos/candidatos_cargo.html:23
@@ -90,8 +90,10 @@ msgid "candidatos a"
 msgstr "candidates for"
 
 #: templates/candidatos/candidatos_cargo.html:54
+#, fuzzy
+#| msgid "Nome da coligação"
 msgid "Houve um erro na solicitação."
-msgstr "There was an error in the request."
+msgstr "There was an error in the request"
 
 #: templates/candidatos/candidatos_cargo.html:56
 #: templates/candidatos/candidatos_estado.html:53

@@ -3,12 +3,11 @@
 {% load i18n %}
 
 {% block title_block %}
-    - {{ candidato.nome_urna }}
+	- {{ candidato.nome_urna }}
 {% endblock %}
 
 {% block body_block %}
-    {% if candidato %}
-
+	{% if candidato %}
 		<div class="ui grid">
 			<div class="row">
 				<div class="ui breadcrumb">
@@ -23,13 +22,12 @@
 					<div class="active section">{{ candidato.nome_urna }} ({{ partido.sigla_partido }})</div>
 				</div>
 			</div>
-			<div class="fourteen wide column">
-
+			<div class="sixteen wide column centered">
 				<div class="ui segment">
-					<div class="ui two column very relaxed grid">
+					<h1>{% trans 'Dados pessoais' %}</h1>
+					<div class="ui divider"></div>
+					<div class="ui three column very relaxed grid">
 						<div class="column">
-							<h1>{% trans 'Dados pessoais' %}</h1>
-							<div class="ui divider"></div>
 							<h3 class="ui header">{% trans 'Nome completo' %}</h3>
 							<p>{{ candidato.nome_completo }}</p>
 							<h3 class="ui header">{% trans 'Data de nascimento' %}</h3>
@@ -38,18 +36,18 @@
 							<p>{{ municipio }}</p>
 							<h3 class="ui header">{% trans 'Gênero' %}</h3>
 							<p>{{ candidato.genero }}</p>
+						</div>
+						<div class="column">
 							<h3 class="ui header">{% trans 'Estado civil' %}</h3>
 							<p>{{ candidato.estado_civil }}</p>
 							<h3 class="ui header">{% trans 'Nacionalidade' %}</h3>
 							<p>{{ candidato.nacionalidade }}</p>
-						</div>
-
-						<div class="column">
-							<br><br><br>
 							<h3 class="ui header">{% trans 'Escolaridade' %}</h3>
 							<p>{{ candidato.grau_instrucao }}</p>
 							<h3 class="ui header">{% trans 'Ocupação' %}</h3>
 							<p>{{ candidato.ocupacao }}</p>
+						</div>
+						<div class="column">
 							<h3 class="ui header">{% trans 'Idade na data da posse' %}</h3>
 							<p>{{ candidato.idade_data_posse }}</p>
 							<h3 class="ui header">{% trans 'Etnia' %}</h3>
@@ -61,38 +59,60 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="ui segment">
-					<div class="row">
-						<h1 class="ui header">{% trans 'Candidatura' %}</h1>
-						<div class="ui divider"></div>
-						<h3 class="ui header">
-							{% trans 'Declaração de bens' %}
-							{% if candidatura.declaracao_bens == 'S' %}
-								<i class="icon check"></i>
-							{% else %}
-								<i class="icon close icon"></i>
-							{% endif %}
-						</h3>
-						<h3 class="ui header">
-							{% if candidatura %}
-								{% trans 'Disputa a reeleição' %}
-								{% if candidatura.reeleicao == 'S' %}
+					<div class="ui two column very relaxed grid">
+						<div class="column">
+							<h1 class="ui header">{% trans 'Coligação' %}</h1>
+							<div class="ui divider"></div>
+								{% if coligacao %}
+									<h3 class="ui header">{% trans 'Nome da coligação' %}</h3>
+									{{ coligacao.nome_coligacao }}
+								{% endif %}
+								{% if partido %}
+									<h3 class="ui header">{% trans 'Partidos' %}</h3>
+									{% for partido in partidos %}
+										{{ partido }}<br>
+									{% endfor %}
+								{% else %}
+									<div class="ui negative message">
+										<i class="close icon"></i>
+										<div class="header">
+											{% trans 'Não existem informações disponíveis sobre a coligação.' %}
+										</div>
+									</div>
+								{% endif %}
+							</div>
+						<div class="column">
+							<h1 class="ui header">{% trans 'Candidatura' %}</h1>
+							<div class="ui divider"></div>
+							<h3 class="ui header">
+								{% trans 'Declaração de bens' %}
+								{% if candidatura.declaracao_bens == 'S' %}
 									<i class="icon check"></i>
 								{% else %}
 									<i class="icon close icon"></i>
 								{% endif %}
-							{% else %}
-								<div class="ui negative message">
-									<i class="close icon"></i>
-									<div class="header">
-										{% trans 'Não existem informações disponíveis sobre a candidatura.' %}
+							</h3>
+							<h3 class="ui header">
+								{% if candidatura %}
+									{% trans 'Disputa a reeleição' %}
+									{% if candidatura.reeleicao == 'S' %}
+										<i class="icon check"></i>
+									{% else %}
+										<i class="icon close icon"></i>
+									{% endif %}
+								{% else %}
+									<div class="ui negative message">
+										<i class="close icon"></i>
+										<div class="header">
+											{% trans 'Não existem informações disponíveis sobre a candidatura.' %}
+										</div>
 									</div>
-								</div>
-							{% endif %}
-						</h3>
-						<h3 class="ui header">{% trans 'Resultado na eleição' %}</h3>
-						<p>{{ candidatura.resultado_eleicao }}</p>
+								{% endif %}
+							</h3>
+							<h3 class="ui header">{% trans 'Resultado na eleição' %}</h3>
+							<p>{{ candidatura.resultado_eleicao }}</p>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -13,7 +13,7 @@
 		{% endfor %}
 	</div>
 
-    {% if candidatos %}
+    {% if candidatos and cargo %}
 		<div class="ui grid">
 			<div class="twelve wide column">
 				<div class="six column"></div>
@@ -51,7 +51,7 @@
 			<div class="ui negative message">
 				<i class="close icon"></i>
 				<div class="header">
-					{% trans 'Não foi possivel encontrar o local solicitado.' %}
+					{% trans 'Houve um erro na solicitação.' %}
 				</div>
 				<p>{% trans 'Tente outra vez!' %}</p>
 			</div>
